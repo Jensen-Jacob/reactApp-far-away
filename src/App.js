@@ -111,12 +111,13 @@ function Item({ item, onDeleteItem, onToggleItem }) {
 function Stats({ items }) {
   const numItems = items.length;
   const numPacked = items.filter((item) => item.packed).length;
-
+  const packedPercent =
+    numItems === 0 ? 0 : Math.floor((numPacked / numItems) * 100);
   return (
     <footer className="stats">
       <em>
         💼You have {numItems} items on your list and you already packed{" "}
-        {numPacked} (X%)
+        {numPacked} ({packedPercent}%)
       </em>
     </footer>
   );
