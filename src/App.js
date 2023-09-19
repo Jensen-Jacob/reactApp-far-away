@@ -112,7 +112,7 @@ function Stats({ items }) {
   const numItems = items.length;
   const numPacked = items.filter((item) => item.packed).length;
   const packedPercent =
-    numItems === 0 ? 0 : Math.floor((numPacked / numItems) * 100);
+    numItems === 0 ? 0 : Math.round((numPacked / numItems) * 100);
   return (
     <footer className="stats">
       <em>
