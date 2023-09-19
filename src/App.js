@@ -116,8 +116,10 @@ function Stats({ items }) {
   return (
     <footer className="stats">
       <em>
-        💼You have {numItems} items on your list and you already packed{" "}
-        {numPacked} ({packedPercent}%)
+        {packedPercent === 100
+          ? "You've packed everything! You are ready to go ✈"
+          : `💼You have ${numItems} items on your list and you already packed ${" "}
+        ${numPacked} (${packedPercent}%)`}
       </em>
     </footer>
   );
