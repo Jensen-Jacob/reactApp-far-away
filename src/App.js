@@ -28,7 +28,7 @@ export default function App() {
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}
       />
-      <Stats />
+      <Stats items={items} />
     </div>
   );
 }
@@ -47,7 +47,7 @@ function Form({ onAddItems }) {
     if (!description) return;
 
     const newItem = { description, quantity, packed: false, id: Date.now() };
-    console.log(newItem);
+    // console.log(newItem);
     // console.log(Date.now());
 
     onAddItems(newItem);
@@ -108,10 +108,13 @@ function Item({ item, onDeleteItem, onToggleItem }) {
   );
 }
 
-function Stats() {
+function Stats({ items }) {
+  const numItems = items.length;
   return (
     <footer className="stats">
-      <em>💼You have X items on your list and you already packed X (X%)</em>
+      <em>
+        💼You have {numItems} items on your list and you already packed X (X%)
+      </em>
     </footer>
   );
 }
