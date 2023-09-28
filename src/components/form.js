@@ -6,7 +6,7 @@ export default function Form({ onAddItems }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(e);
+    // console.log(e);
 
     if (!description) return;
 
@@ -21,7 +21,10 @@ export default function Form({ onAddItems }) {
   return (
     <form className="add-form" onSubmit={handleSubmit}>
       <h3>What do you need for your 😍 trip</h3>
-      <select onChange={(e) => setQuantity(Number(e.target.value))}>
+      <select
+        value={quantity}
+        onChange={(e) => setQuantity(Number(e.target.value))}
+      >
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
           <option value={num} key={num}>
             {num}
