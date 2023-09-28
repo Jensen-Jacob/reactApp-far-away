@@ -1,5 +1,5 @@
 export default function Item({ item, onDeleteItem, onToggleItem }) {
-  console.log("Recieved Item:", item);
+  // console.log("Recieved Item:", item);
   return (
     <li>
       <input type="checkbox" onChange={() => onToggleItem(item.id)} />

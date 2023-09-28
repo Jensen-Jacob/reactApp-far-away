@@ -30,7 +30,7 @@ export default function PackingList({
             onToggleItem={onToggleItem}
           />
         ))}
-        {items.map((item) => console.log(item))}
+        {/* {items.map((item) => console.log(item))} */}
       </ul>
       <div className="actions">
         <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
